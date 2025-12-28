@@ -1,8 +1,26 @@
-# 🌿 Resort Booking Agent – AI-Powered Management System
+# 🌿 Resort Booking Agent  
+### AI-Powered Conversational Resort Management System
 
-An **AI-powered resort booking and management system** that enables guests to place orders and service requests through a conversational interface, while administrators manage operations via a real-time dashboard.
+---
 
-This project demonstrates **agentic AI**, **multi-turn conversations**, **backend APIs**, and a **Streamlit-based admin dashboard**, following an industry-style modular architecture.
+## 📌 Project Overview
+
+The **Resort Booking Agent** is an **AI-powered conversational system** designed to simulate real-world resort operations.  
+It allows guests to place **food orders** and **service requests** through a chat interface, while administrators manage these operations via a **real-time dashboard**.
+
+The system is built using a **modular backend architecture**, combining **agentic AI**, **multi-turn conversations**, **REST APIs**, and a **Streamlit-based admin dashboard**.
+
+This project demonstrates how **AI agents can be integrated into operational workflows** in the hospitality domain.
+
+---
+
+## 🎯 Objectives
+
+- To design a **conversational AI agent** capable of handling multiple user intents  
+- To implement **multi-turn confirmation flows** for reliable order handling  
+- To build a **backend system** that connects AI decisions with real database operations  
+- To provide an **admin-facing dashboard** for monitoring and updating resort operations  
+- To follow **clean software engineering and Git practices**
 
 ---
 
