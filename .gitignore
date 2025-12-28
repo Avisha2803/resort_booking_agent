@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+backend/.env
+
+# Virtual environment
+venv/
+.env.local
+
+# Databases
+*.db
+
+# Streamlit
+.streamlit/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Misc
+2.0.30
