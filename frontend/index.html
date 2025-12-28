@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Eco Resort Concierge</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Chat Container -->
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <h1>
+                    <i class="fas fa-leaf"></i>
+                    Eco Resort Concierge
+                </h1>
+                <p class="subtitle">Your sustainable travel assistant ♻️</p>
+                
+                <!-- Connection Status -->
+                <div id="connection-status" class="connection-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- Initial welcome message -->
+            <div class="message bot">
+                <div class="message-icon">🤖</div>
+                <div class="message-content">
+                    <div class="message-sender">Eco-Concierge</div>
+                    <div class="message-text">
+                        🌿 <strong>Welcome to our Sustainable Resort!</strong><br><br>
+                        I'm your eco-friendly assistant. I can help you with:<br>
+                        • 🍽️ Restaurant orders & menu<br>
+                        • 🧹 Room service requests<br>
+                        • 🏨 Resort information<br><br>
+                        How can I assist you today?
+                    </div>
+                    <div class="message-time" id="welcome-time"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="typing-indicator hidden">
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="typing-text">Thinking...</div>
+        </div>
+        
+        <!-- Chat Input Area -->
+        <div class="chat-input-area">
+            <!-- Quick Help -->
+            <div class="quick-help">
+                <span class="help-text">Try:</span>
+                <span class="help-example" data-example="What's on the menu?">"What's on the menu?"</span>
+                <span class="help-example" data-example="I need room service">"I need room service"</span>
+            </div>
+            
+            <!-- Main Input -->
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Type your message..." 
+                    autocomplete="off"
+                >
+                <button id="send-btn" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send</span>
+                </button>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-action" data-prompt="What's on the menu?">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menu</span>
+                </button>
+                <button class="quick-action" data-prompt="Order room service">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Room Service</span>
+                </button>
+                <button class="quick-action" data-prompt="Book a restaurant table">
+                    <i class="fas fa-calendar"></i>
+                    <span>Book Table</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    
+    <!-- Inline JavaScript for setup -->
+    <script>
+        // Set initial welcome time
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeTime = document.getElementById('welcome-time');
+            if (welcomeTime) {
+                const now = new Date();
+                welcomeTime.textContent = now.toLocaleTimeString([], { 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+            }
+            
+            // Setup help example clicks
+            document.querySelectorAll('.help-example').forEach(element => {
+                element.addEventListener('click', function() {
+                    const example = this.getAttribute('data-example');
+                    const input = document.getElementById('user-input');
+                    if (input && example) {
+                        input.value = example;
+                        input.focus();
+                    }
+                });
+            });
+            
+            // Auto-focus input
+            const input = document.getElementById('user-input');
+            if (input) {
+                setTimeout(() => input.focus(), 100);
+            }
+        });
+    </script>
+</body>
+</html>
