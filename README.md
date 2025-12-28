@@ -1,55 +1,109 @@
-# Resort Management System - Startup Guide
+# 🌿 Resort Booking Agent – AI-Powered Management System
 
-Follow these steps to run the application. You will need to open **3 separate terminal windows**.
+An **AI-powered resort booking and management system** that enables guests to place orders and service requests through a conversational interface, while administrators manage operations via a real-time dashboard.
 
-### Prerequisites
-- Ensure you have Python installed.
-- Ensure your `.env` file has the correct `OPENAI_API_KEY`.
+This project demonstrates **agentic AI**, **multi-turn conversations**, **backend APIs**, and a **Streamlit-based admin dashboard**, following an industry-style modular architecture.
 
 ---
 
-### Step 1: Start the Backend Server
-This handles the AI logic and database.
+## 🚀 Features
 
-1. Open a terminal.
-2. Navigate to the project root folder:
-   ```powershell
-   cd c:\Users\EJ312WS\OneDrive\Desktop\shruti
-   ```
-3. Run the server:
-   ```powershell
-   uvicorn backend.main:app --reload --port 8000
-   ```
-   *You should see "Application startup complete".*
+### 👤 Guest Side (Chat Interface)
+- 💬 Conversational AI booking agent
+- 🔁 Multi-turn order confirmation
+- 🍽️ Food ordering
+- 🛎️ Service requests (room service, housekeeping, etc.)
+- 🧠 Intent-based routing (order / query / help)
+- 📋 Structured responses with confirmations
 
----
-
-### Step 2: Start the Frontend (Chat Interface)
-This is the chat window for guests.
-
-1. Open a **new** terminal.
-2. Navigate to the frontend folder:
-   ```powershell
-   cd c:\Users\EJ312WS\OneDrive\Desktop\shruti\frontend
-   ```
-3. Start the simple web server:
-   ```powershell
-   python -m http.server 8080
-   ```
-4. Open your browser to: **[http://localhost:8080](http://localhost:8080)**
+### 🛠️ Admin Side (Dashboard)
+- 📊 Real-time Streamlit admin dashboard
+- 📦 View and manage guest orders
+- 🛎️ Track service requests
+- 🔄 Update order/request status
+- 🗄️ SQLite-backed data persistence
 
 ---
 
-### Step 3: Start the Dashboard (Admin View)
-This shows orders and requests.
+## 🧠 System Architecture
 
-1. Open a **third** terminal.
-2. Navigate to the project root folder:
-   ```powershell
-   cd c:\Users\EJ312WS\OneDrive\Desktop\shruti
-   ```
-3. Run the dashboard:
-   ```powershell
-   python -m streamlit run dashboard/app.py
-   ```
-4. Open your browser to: **[http://localhost:8501](http://localhost:8501)**
+User (Chat UI)
+│
+▼
+Frontend (HTML / CSS / JavaScript)
+│
+▼
+FastAPI Backend
+│
+├── AI Agent (Intent Router + Tools)
+├── Order & Service APIs
+├── SQLite Database
+│
+▼
+Streamlit Admin Dashboard
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-----|-----------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Python, FastAPI |
+| AI / Agent | LLM-based intent routing, tool calling |
+| Dashboard | Streamlit |
+| Database | SQLite |
+| Version Control | Git, GitHub |
+
+---
+
+## 📂 Project Structure
+
+resort_booking_agent/
+│
+├── backend/
+│ ├── main.py # FastAPI entry point
+│ ├── agents.py # AI agent & intent logic
+│ ├── tools.py # Order & service tools
+│ ├── models.py # Data models
+│ └── database.py # SQLite operations
+│
+├── dashboard/
+│ └── app.py # Streamlit admin dashboard
+│
+├── frontend/
+│ ├── index.html # Chat UI
+│ ├── app.js # Frontend logic
+│ └── style.css # Styling
+│
+├── run.py # Application runner
+├── requirements.txt
+└── README.md
+
+
+---
+
+⚙️ How to Run Locally
+
+1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Avisha2803/resort_booking_agent.git
+cd resort_booking_agent
+
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+
+3️⃣ Start Backend Server
+python run.py
+
+4️⃣ Start Admin Dashboard
+streamlit run dashboard/app.py
+
+5️⃣ Open in Browser
+
+💬 Chat Interface:
+http://localhost:8080
+
+📊 Admin Dashboard:
+http://localhost:8501
