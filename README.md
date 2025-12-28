@@ -82,23 +82,22 @@ resort_booking_agent/
 │
 ├── backend/
 │ ├── main.py # FastAPI entry point
-│ ├── agents.py # AI agent & intent logic
-│ ├── tools.py # Order & service tools
+│ ├── agents.py # AI agent & intent routing logic
+│ ├── tools.py # Order and service handling functions
 │ ├── models.py # Data models
-│ └── database.py # SQLite operations
+│ └── database.py # SQLite database operations
 │
 ├── dashboard/
 │ └── app.py # Streamlit admin dashboard
 │
 ├── frontend/
-│ ├── index.html # Chat UI
+│ ├── index.html # Chat interface UI
 │ ├── app.js # Frontend logic
 │ └── style.css # Styling
 │
 ├── run.py # Application runner
-├── requirements.txt
+├── requirements.txt # Python dependencies
 └── README.md
-
 
 ---
 
